@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { appReducers } from './store/app.reducer';
 import { UsersModule } from './users/users.module';
 import { EffectsArray } from './store/effects/index';
+import { APP_BASE_HREF } from '@angular/common';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { EffectsArray } from './store/effects/index';
     }),
 
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
